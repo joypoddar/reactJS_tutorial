@@ -41,3 +41,9 @@ There are two types of component:
 
 - Stateless Functional Component - its a function like js function.
 - Stateful Class Component - regular es6 class which have a render component
+
+## Tutorial 5: Functional Components
+
+Functional components are just js functions, they optionally receive `object` or properties which is called `props` and returns `html`. The html is known as JSX.
+
+We use [Pascal case](https://techterms.com/definition/pascalcase) for component file naming.
