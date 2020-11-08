@@ -93,3 +93,33 @@ camelCase property naming convention
 
 - onclick → onClick
 - tabindex → tabIndex
+
+### Tutorial 9: Props
+
+Props are immutable
+
+## Tutorial 10: State
+
+### props
+
+props get passed to the component
+
+function parameters 
+
+props are immutable 
+
+props - Functional Components 
+
+this.props - Class Components
+
+### state
+
+state is managed within the component
+
+ variables declared in the function body
+
+state can be changed
+
+useState hook - functional Components
+
+this.state - Class Component
