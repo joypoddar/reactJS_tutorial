@@ -73,3 +73,23 @@ They are basically ES6 classes. They can also receive optional `props` . Apart f
 
 - No breaking change.
 - Complete opt-in and 100% backwards-compatible.
+
+## Tutorial 8: JSX
+
+- JavaScript XML (JSX) - Extension to the JS language syntax.
+- Write XML - like code for elements and components.
+- JSX tags have a tag name, attributes and children.
+- JSX is not a necessity to write React applications.
+- JSX make code simpler and elegant
+- JSX ultimately transpiles to pure JavaScript which is understood by the browsers.
+
+### JSX Differences
+
+Class → className
+
+for → htmlFor
+
+camelCase property naming convention
+
+- onclick → onClick
+- tabindex → tabIndex
