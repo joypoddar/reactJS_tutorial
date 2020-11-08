@@ -68,3 +68,8 @@ They are basically ES6 classes. They can also receive optional `props` . Apart f
 - Complex UI logic
 - Provide lifecycle hooks
 - Stateful/ Smart/Container
+
+## Tutorial 7: Hooks Update
+
+- No breaking change.
+- Complete opt-in and 100% backwards-compatible.
