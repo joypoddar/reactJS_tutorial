@@ -47,3 +47,24 @@ There are two types of component:
 Functional components are just js functions, they optionally receive `object` or properties which is called `props` and returns `html`. The html is known as JSX.
 
 We use [Pascal case](https://techterms.com/definition/pascalcase) for component file naming.
+
+## Tutorial 6: Class Components
+
+They are basically ES6 classes. They can also receive optional `props` . Apart from that they can also maintain private internal state.
+
+### Functional Component
+
+- Simple functions receiving props and returning a declaration
+- Use them as much as possible
+- Advantage: Absence of 'this' keyword
+- Solution without using state
+- Mainly responsible for the UI
+- Stateless/Dumb/Presentational
+
+### Class Component
+
+- More feature rich
+- Maintain their own private data
+- Complex UI logic
+- Provide lifecycle hooks
+- Stateful/ Smart/Container
