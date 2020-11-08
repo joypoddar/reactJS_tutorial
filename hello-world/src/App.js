@@ -25,7 +25,9 @@ class App extends Component {
           <Welcome name="Clark" heroname="Superman"/>
           <Welcome name="Diana" heroname="Wonder Woman"/> */}
           {/* <Hello/> */}
-      </div>
+          <Greet name="Bruce" heroname="Batman" />
+          <Welcome name="Clark" heroname="Superman"/>
+        </div>
     );
   }
 }

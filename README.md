@@ -137,3 +137,22 @@ Always make use of setState and never modify the state directly.
 If a code has to be executed after the state has been updated, place that code in the call back function which is the second argument to the setState method.
 
 When you have to update state based on the previous state value, pass in a function as an argument instead of the regular object. The `prevState` function has a second argument called `props`.
+
+## Tutorial 12: Destructuring props and state
+
+`const Greet = ({name, heroname}) => {}` this is one way of destructuring. Its called destructuring in the parameter.
+
+Another way is to destructure in the function body.
+
+```jsx
+const Greet = props => {
+const {name, heroname} = props;
+return (
+	<div>
+		<h1>Hello {name} a.k.a {heroname}</h1>
+	</div>
+	)
+}
+```
+
+In class component we generally tend to destructure the props and state in the render method.
