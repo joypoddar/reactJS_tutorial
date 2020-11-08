@@ -156,3 +156,15 @@ return (
 ```
 
 In class component we generally tend to destructure the props and state in the render method.
+
+## Tutorial 13: Event Handling
+
+Any web application that is created typically has user interactions. When the user interacts, events are fired.
+
+React events are named using camelCase instead of regular lowercase in html and js. With jsx we pass an event function as an event handler rather than a string. Hence we use the {} instead of the "".
+
+`{clickHandler}` here we passed the function as the event handler
+
+`{clickHandler()}` this becomes a function call. This can't be done in event handling.
+
+**We need to remember that the event handler is a function and not a function call**
