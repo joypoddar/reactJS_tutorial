@@ -123,3 +123,17 @@ state can be changed
 useState hook - functional Components
 
 this.state - Class Component
+
+## Tutorial 11: setState
+
+Watch the [video](https://www.youtube.com/watch?v=uirRaVjRsf4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=11) for usage of setState and its behaviour
+
+If we `console.log` the value of the counter as shown in the video, we will notice that the value in the console in 1 less than the actual value that is rendered. This is because calls to setState is async. Here the `console.log` is called before the state is set. Many a times we want a piece of code execute only when the state is set. To handle such tasks we have the `callback` function which can be passed as a second parameter to the setState function. The setState function has two parameters: the first is the state object and the second parameter is the callback method. The callback function is an arrow function. 
+
+### Summary
+
+Always make use of setState and never modify the state directly.
+
+If a code has to be executed after the state has been updated, place that code in the call back function which is the second argument to the setState method.
+
+When you have to update state based on the previous state value, pass in a function as an argument instead of the regular object. The `prevState` function has a second argument called `props`.

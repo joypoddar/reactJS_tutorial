@@ -1,4 +1,4 @@
-// #6: Class Components
+// ̥#6: Class Components
 
 import React, {Component} from 'react'
 
