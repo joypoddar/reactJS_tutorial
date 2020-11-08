@@ -168,3 +168,45 @@ React events are named using camelCase instead of regular lowercase in html and 
 `{clickHandler()}` this becomes a function call. This can't be done in event handling.
 
 **We need to remember that the event handler is a function and not a function call**
+
+## Tutorial 14: Binding Event Handlers
+
+Using the `bind` keyword.
+
+Using arrow functions
+
+Binding the event handler in the constructor as opposed to binding in the render method.
+
+```jsx
+*<button onClick={this.clickHandler.bind(this)}>Click</button>* 
+```
+
+*This is the first method of passing event handlers. This is expensive in large applications as it causes new event handlers whenever this is called* 
+
+```jsx
+*button onClick={() => this.clickHandler()}>Click</button>* 
+```
+
+*this also has performance implications* 
+
+```jsx
+// this part goes inside the constructor
+this.clickHandler = this.clickHandler.bind(this);
+// this part goes inside the render method
+<button onClick={this.clickHandler}>Click</button>
+```
+
+*This is better as the binding happens once*
+
+The final approach is to use an arrow function as a class property. We basically have to change the way we define the method in the class.
+
+```jsx
+// this part goes inside the class as a method
+clickHandler = () => {
+        this.setState ({
+            message: 'GoodBye!'
+        })
+    }
+// this part goes inside the render method
+<button onClick={this.clickHandler}>Click</button>
+```
