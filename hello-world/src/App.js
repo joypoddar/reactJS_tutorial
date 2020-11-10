@@ -8,16 +8,20 @@ import FunctionClick from './component/FunctionClick';
 import ClassClick from './component/ClassClick';
 import Hello from './component/Hello';
 import EventBind from './component/EventBind';
+import ParentComponent from './component/ParentComponent';
+import UserGreeting from './component/UserGreeting';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+      <UserGreeting/>
         {/* <Message/> */}
         {/* <Counter/> */}
         {/* <FunctionClick/> */}
         {/* <ClassClick/> */}
-        <EventBind/>
+        {/* <EventBind/> */}
+        {/* <ParentComponent/> */}
           {/* <Greet name="Bruce" heroname="Batman">
             <p>This is children props</p>
           </Greet>

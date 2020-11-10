@@ -213,3 +213,25 @@ clickHandler = () => {
 // this part goes inside the render method
 <button onClick={this.clickHandler}>Click</button>
 ```
+## Tutorial 15: Methods as props
+
+We can pass a method as a prop to a child in the following manner.
+
+```jsx
+<ChildComponent greetHandler = {this.greetParent}/>
+```
+
+Likewise to pass a parameter from the child component to the parent component, we use and `arrow function` like so
+
+```jsx
+<button onClick={() => props.greetHandler('child')}>Greet Parent</button>
+```
+
+## Tutorial 16: Conditional Rendering
+
+Approaches
+
+1. if/else
+2. Element variables
+3. Ternary conditional operators
+4. Short circuit operators
