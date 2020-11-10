@@ -284,3 +284,7 @@ return (
 ```
 
 Here if `this.state.isLoggedIn` returns true then only the second expression on the right side of the `&&` is evaluated else it is not evaluated.
+
+## Tutorial 17: List Rendering
+
+We use the `map` method for rendering list.

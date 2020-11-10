@@ -10,12 +10,14 @@ import Hello from './component/Hello';
 import EventBind from './component/EventBind';
 import ParentComponent from './component/ParentComponent';
 import UserGreeting from './component/UserGreeting';
+import NameList from './component/NameList';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <UserGreeting/>
+      <NameList/>
+      {/* <UserGreeting/> */}
         {/* <Message/> */}
         {/* <Counter/> */}
         {/* <FunctionClick/> */}
