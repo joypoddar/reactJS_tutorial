@@ -304,3 +304,13 @@ Keys give the elements a stable identity.
 Keys help React identify which items have changed, are added, or are removed
 
 Help in efficient update of the user interface.
+
+## Tutorial 19: Index as Key Anti-pattern
+
+A lot of times developers use the index of an element as a `key`. This might result in creating problems when used in the wrong scenario.
+
+### When to use index as a Key
+
+1. The items in your list do not have a unique id.
+2. The list is a static one and will not change.
+3. The list will never be reordered or filtered.
