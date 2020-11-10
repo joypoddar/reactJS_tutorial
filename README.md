@@ -48,26 +48,45 @@ Functional components are just js functions, they optionally receive `object` or
 
 We use [Pascal case](https://techterms.com/definition/pascalcase) for component file naming.
 
+When we are exporting a component by using `export default App` we can imoprt that component by using any name. There is another kind of export called *named exports* which looks like:
+
+```jsx
+export const Greet = () => <h1>Hello Joy!</h1> 
+```
+
+In this situation we have to import the component with the same name.
+Eg:
+
+```jsx
+import {Greet} from './component/Greet';
+```
+
 ## Tutorial 6: Class Components
 
 They are basically ES6 classes. They can also receive optional `props` . Apart from that they can also maintain private internal state.
 
-### Functional Component
+| Functional Component | Class Component |
+|---|---|
+| Simple functions receiving props and returning a declaration| More feature rich |
+| Use them as much as possible | Maintain their own private data|
+| Advantage: Absence of 'this' keyword| Complex UI logic |
+| Solution without using state | Provide lifecycle hooks |
+| Mainly responsible for the UI | |
+| Stateless/Dumb/Presentational | Stateful/ Smart/Container|
 
-- Simple functions receiving props and returning a declaration
-- Use them as much as possible
-- Advantage: Absence of 'this' keyword
-- Solution without using state
-- Mainly responsible for the UI
-- Stateless/Dumb/Presentational
+Class Component boiler-plate
 
-### Class Component
+```jsx
+import React, {Component} from 'react';
 
-- More feature rich
-- Maintain their own private data
-- Complex UI logic
-- Provide lifecycle hooks
-- Stateful/ Smart/Container
+class ClassName extends Component {
+    render() {
+        return <h1></h1> // render should return null or some html
+    }
+}
+
+export default ClassName;
+```
 
 ## Tutorial 7: Hooks Update
 
@@ -100,29 +119,13 @@ Props are immutable
 
 ## Tutorial 10: State
 
-### props
-
-props get passed to the component
-
-function parameters 
-
-props are immutable 
-
-props - Functional Components 
-
-this.props - Class Components
-
-### state
-
-state is managed within the component
-
- variables declared in the function body
-
-state can be changed
-
-useState hook - functional Components
-
-this.state - Class Component
+| props | state |
+|---|---|
+| props get passed to the component| state is managed within the component|
+| function parameters | variables declared in the function body|
+| props are immutable| state can be changed |
+| props - Functional Components | useState hook - functional Components |
+| this.props - Class Components | this.state - Class Component|
 
 ## Tutorial 11: setState
 
