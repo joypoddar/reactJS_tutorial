@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import Greet from './component/Greet';
-import Welcome from './component/Welcome';
-import Message from './component/Message';
-import Counter from './component/Counter';
-import FunctionClick from './component/FunctionClick';
-import ClassClick from './component/ClassClick';
-import Hello from './component/Hello';
-import EventBind from './component/EventBind';
-import ParentComponent from './component/ParentComponent';
-import UserGreeting from './component/UserGreeting';
-import NameList from './component/NameList';
+// import Greet from './component/Greet';
+// import Welcome from './component/Welcome';
+// import Message from './component/Message';
+// import Counter from './component/Counter';
+// import FunctionClick from './component/FunctionClick';
+// import ClassClick from './component/ClassClick';
+// import Hello from './component/Hello';
+// import EventBind from './component/EventBind';
+// import ParentComponent from './component/ParentComponent';
+// import UserGreeting from './component/UserGreeting';
+// import NameList from './component/NameList';
+// import Stylesheet from './component/Stylesheet';
+import Inline from './component/Inline';
+import './component/appStyles.css';
+import styles from './component/appStyles.module.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <NameList/>
+      <h1 className='error'>Error</h1>
+      <h1 className={styles.success}>Success</h1>
+      {/* <Inline/> */}
+      {/* <Stylesheet primary={false}/> */}
+      {/* <NameList/> */}
       {/* <UserGreeting/> */}
         {/* <Message/> */}
         {/* <Counter/> */}

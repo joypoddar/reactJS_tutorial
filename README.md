@@ -314,3 +314,20 @@ A lot of times developers use the index of an element as a `key`. This might res
 1. The items in your list do not have a unique id.
 2. The list is a static one and will not change.
 3. The list will never be reordered or filtered.
+
+## Tutorial 20: Styling and CSS Basics
+
+### Styling React Components
+
+1. CSS stylesheets
+2. Inline styling 
+3. CSS modules
+4. CSS in JS Libraries {Styled Components}
+
+We use template literals to pass multiple classes. There are ways to conditionally pass css classes.
+
+In React, inline styles are not specified as a string. Instead they are specified as an object, who's key  is a camelCased version of the styling and its value is the is usually a string.
+
+CSS modules feature is available with `react-scripts` version 2 or higher. There is a file naming convention to be used for `create-react-app` . The file name must be suffixed with `.module.css`
+
+One advantage of using css modules is that the classes are locally scoped.  Inline styling works in child components even without an import, this can sometimes cause conflicts.
