@@ -288,3 +288,19 @@ Here if `this.state.isLoggedIn` returns true then only the second expression on 
 ## Tutorial 17: List Rendering
 
 We use the `map` method for rendering list.
+
+## Tutorial 18: List & Keys
+
+Each item in the list rendered with a `map` operator should have a key associated with it.
+
+Note: `key` props are not accessible in the child components.
+
+### Summary
+
+A `key` is a special string attribute you need to include when creating lists of elements.
+
+Keys give the elements a stable identity.
+
+Keys help React identify which items have changed, are added, or are removed
+
+Help in efficient update of the user interface.

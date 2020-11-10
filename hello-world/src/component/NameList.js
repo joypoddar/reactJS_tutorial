@@ -22,7 +22,7 @@ function NameList() {
             skill: 'Fullstack'
         }
     ];
-    const personList = persons.map((person) => <Persons person = {person}/> );
+    const personList = persons.map((person) => <Persons key = {person.id} person = {person}/> );
     return (
         <div>
             {personList}
