@@ -235,3 +235,52 @@ Approaches
 2. Element variables
 3. Ternary conditional operators
 4. Short circuit operators
+
+If/Else
+
+```jsx
+if (this.state.isLoggedIn) {
+    return (
+        <div>Welcome Joy</div>
+    )
+}
+else {
+    return (
+        <div>Welcome Guest</div>
+    )
+}
+```
+
+Element Variables
+
+```jsx
+let message;
+if (this.state.isLoggedIn) {
+    message = <div>Welcome Joy</div>
+}
+else {
+    message = <div>Bonjour Guest</div>
+}
+
+return (<div>{message}</div>)
+```
+
+Ternary conditional operators
+
+```jsx
+return (
+    this.state.isLoggedIn ?
+    <div>Welcome Joy</div> :
+    <div>Hello Guest</div>
+)
+```
+
+Short circuit operators
+
+```jsx
+return (
+    this.state.isLoggedIn && <div>Welcome Joy</div>
+)
+```
+
+Here if `this.state.isLoggedIn` returns true then only the second expression on the right side of the `&&` is evaluated else it is not evaluated.
