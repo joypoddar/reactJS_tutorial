@@ -353,3 +353,17 @@ Unmounting : they are called when a component is being removed from the DOM. Her
 Error Handling : they are called  when there is an error during rendering in a lifecycle method or in the constructor of any child component. Here we have two methods: *static getDerivedStateFromError* and *componentDidCatch*
 
 Getting a proper understanding of Lifecycle methods and when to use which method is crucial to properly understanding how to work with React.
+
+## Tutorial 23: Component Mounting Lifecycle Methods
+
+These methods are called when an instance of a component is being created and being inserted into a DOM. We are going through them in the order that they are invoked.
+
+First we have the `constructor(props)` . It is a special function that will get called whenever a new component gets created. The constructor is used to *initialize the state and/or also for binding the event handlers to the class events.* We should keep in mind not to cause side effects. Eg: Never make HTTP requests from within a constructor.
+
+There are two important things to keep in mind when defining a **constructor.** We have to call a special function called `super(props)`. In a class we can only have the access to `props` after passing it through `super` as an argument. The next thing to keep in mind is that the constructor is the only place where we are allowed to set or change the `state` by directly overwriting `this.state` fields. In other places we have to use the `this.setState` method.
+
+The second method that we call is a static method *getDerivedStateFromProps(props, state).* This method gets `props` and `state` as parameters and return either the new state or null. The React documentation classifies this method as a rarely used lifecycle method. **This method is basically used when the state of the component depends on changes in props over time. Eg: Suppose we have a component whose initial state depends on the props that is passed to the component. In such a scenario we can use this method to set the state. Since this method is a static method, *it does not have access to the this keyword.* We cannot call `this.setState` within this particular method. Instead we simply have to return an object that represents the new state of the component. Again we shouldn't cause side effects.
+
+The third method is the *render()* method. It is the only required method in a class component.  In the render method we simply read `this.props` and `this.state` and return the JSX which describes the UI. The render function is a pure function. For a given props or state, it always renders the same UI. What we shouldn't do in this method is changing the state or interact with DOM or make ajax calls. Since the render() method JSX also contains the other children components, the children component lifecycle methods are also executed right after the parent render method.
+
+The final method of the mounting phase is the *componentDidMount().* This method  will only be called once in the whole lifecycle of the given component and it is invoked immediately after a component and all its children components have been rendered to the DOM. This method is the perfect place to cause side effects. It is here we can interact with the DOM or perform any ajax calls or load data. So *componentDidMount* is a good place to perform initialization that requires DOM nodes also load data by making network requests.
