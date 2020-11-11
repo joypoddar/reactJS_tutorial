@@ -335,3 +335,21 @@ One advantage of using css modules is that the classes are locally scoped.  Inli
 ## Tutorial 21: Basics of Form Handling
 
 **Controlled components** are those whose values are controlled by react.
+
+## Tutorial 22: Component Lifecycle Methods
+
+When we create a React component, it goes through several stages in its lifecycle. React provides with built-in methods with which we can override at particular stages in the lifecycle.
+
+Lifecycle methods available for a class components. These methods are not available for a functional component. With the new feature proposal of Hooks, there is the `useEffect` hook which partially relates to lifecycle hooks.
+
+### Lifecycle methods (Version 16+)
+
+Mounting : they are called when an instance of a component is being created and inserted into a DOM. During the mounting phase we have four methods: *constructor, static getDerivedStateFromProps, render* and *componentDidMount* 
+
+Updating:  they are called when a component is being re-rendered as a result of changes to either its props or state. During the updating phase we have five methods *static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate* and *componentDidUpdate*
+
+Unmounting : they are called when a component is being removed from the DOM. Here we have one method: componentWillUnmount
+
+Error Handling : they are called  when there is an error during rendering in a lifecycle method or in the constructor of any child component. Here we have two methods: *static getDerivedStateFromError* and *componentDidCatch*
+
+Getting a proper understanding of Lifecycle methods and when to use which method is crucial to properly understanding how to work with React.
