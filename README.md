@@ -331,3 +331,7 @@ In React, inline styles are not specified as a string. Instead they are specifie
 CSS modules feature is available with `react-scripts` version 2 or higher. There is a file naming convention to be used for `create-react-app` . The file name must be suffixed with `.module.css`
 
 One advantage of using css modules is that the classes are locally scoped.  Inline styling works in child components even without an import, this can sometimes cause conflicts.
+
+## Tutorial 21: Basics of Form Handling
+
+**Controlled components** are those whose values are controlled by react.
