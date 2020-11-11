@@ -367,3 +367,25 @@ The second method that we call is a static method *getDerivedStateFromProps(prop
 The third method is the *render()* method. It is the only required method in a class component.  In the render method we simply read `this.props` and `this.state` and return the JSX which describes the UI. The render function is a pure function. For a given props or state, it always renders the same UI. What we shouldn't do in this method is changing the state or interact with DOM or make ajax calls. Since the render() method JSX also contains the other children components, the children component lifecycle methods are also executed right after the parent render method.
 
 The final method of the mounting phase is the *componentDidMount().* This method  will only be called once in the whole lifecycle of the given component and it is invoked immediately after a component and all its children components have been rendered to the DOM. This method is the perfect place to cause side effects. It is here we can interact with the DOM or perform any ajax calls or load data. So *componentDidMount* is a good place to perform initialization that requires DOM nodes also load data by making network requests.
+
+## Tutorial 24: Component Updating Lifecycle Methods
+
+Updating Lifecycle Methods are those that are called because of changes to the props or the state. We will be going through them in the order in which they are invoked. There are five of them out of which three are rarely used. 
+
+The first method is *getDerivedStateFromProps(props, state).* This is a static method which receives props and state as its parameter and has to return null or an object that has the current state of the component. This method is called every time a component is re-rendered. This method is used when the state depends on the props of the component.
+
+The second method is the *shouldComponentUpdate(nextProps, nextState).* This method receives the updated props and state and the purpose of this method is clear from its name. It dictates whether the component should update or not. By default all class components re-renders whenever the props they receive or their state changes. *This method can prevent that default behaviour by returning false.* What we can do is check the previous state values with the current state values and return true or false accordingly to let React know whether the component should update or not. This method is basically used for performance optimization. We should avoid causing any side effects or calling the setState method. This is a rarely used method.
+
+The third method is the *render()* method.
+
+The fourth method is *getSnapshotBeforeUpdate(prevProp, prevState )* this method is called right before the changes from the virtual DOM is to be reflected in the DOM. This again is a rarely used method. We can use this method to capture some information from the DOM. This method will either return null or return a value. Returned value will be passed as the third parameter to the next method. 
+
+The final method in  the update lifecycle is the *componentDidUpdate(prevProps, PrevState, snapshot)* this method is called after the render is finished in the re-render cycles. We can cause side effects. That is we can make ajax calls. But before making the call we need to compare the previous props with the new props and then decide whether to make the ajax call or not. If we do not compare we are basically making unwanted requests which is not a good idea. 
+
+### Unmounting Phase Method
+
+It has just one method *componentWillUnmount()*. This method is invoked immediately before a component is unmounted and destroyed. In this method we can perform some clean up tasks like cancelling any network requests, removing event handlers, cancelling any subscriptions and also invalidating timers. We shouldn't call the setState method because once the unmounting is done, a component is never re-rendered. 
+
+### Error Handling Phase Methods
+
+There are two methods *static getDerivedStateFromError(error) and componentDidCatch(error, info).* These methods are called when there is an error either during rendering, in a lifecycle method, or the constructor of any child component
