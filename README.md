@@ -393,3 +393,30 @@ There are two methods *static getDerivedStateFromError(error) and componentDidCa
 ## Tutorial 25: Fragments
 
 Fragments lets us group a list of children elements without creating extra nodes to the DOM. React rule specifies that the render element can have multiple divs inside a parent div. `React.Fragments` allow us to bypass that. It can accept `key` attribute when rendering lists of items. We can only pass the key attribute as an attribute of the react fragment. If we use the short-hand method of React.Fragments, we cannot pass in the key attribute.
+
+## Tutorial 26: Pure Components
+
+Another way of creating components.
+
+| Regular Component | Pure Component|
+|---|---|
+|A regular component does not implement the *shouldComponentUpdate* method. It always returns true by default.|A pure component on the other hand implements *shouldComponentUpdate* with a shallow props and state comparison. 
+
+### Shallow Comparison (SC)
+
+#### Primitive Types
+
+For two primitive types a and b for numbers, strings and booleans a (SC) b returns true is a and b have the same value and are of the same type. 
+Eg: string 'Joy' (SC) string 'Joy' returns true
+
+#### Complex Types
+
+a (SC) b returns true if a and b reference the same object.
+
+#### Pure Component (Def)
+
+A pure component implements shouldComponentUpdate with a shallow prop and state comparison.
+
+It does a SC of prevState, prevProps with currentState and currentProps and only when there is a difference then it re-renders.
+
+To answer the question why we should use PureComponents. PureComponents by preventing unnecessary renders gives performance boost in certain scenarios. One thing to keep in mind is that we should not mutate objects or arrays in props or state. Always return a new object or array while working with pure component
