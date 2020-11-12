@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import LifecycleA from "./component/LifecycleA";
+// import FragmentDemo from "./component/FragmentDemo";
+import Table from "./component/Table";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <LifecycleA />
+        {/* <FragmentDemo/> */}
+        <Table />
       </div>
     );
   }

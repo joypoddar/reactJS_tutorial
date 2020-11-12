@@ -389,3 +389,7 @@ It has just one method *componentWillUnmount()*. This method is invoked immediat
 ### Error Handling Phase Methods
 
 There are two methods *static getDerivedStateFromError(error) and componentDidCatch(error, info).* These methods are called when there is an error either during rendering, in a lifecycle method, or the constructor of any child component
+
+## Tutorial 25: Fragments
+
+Fragments lets us group a list of children elements without creating extra nodes to the DOM. React rule specifies that the render element can have multiple divs inside a parent div. `React.Fragments` allow us to bypass that. It can accept `key` attribute when rendering lists of items. We can only pass the key attribute as an attribute of the react fragment. If we use the short-hand method of React.Fragments, we cannot pass in the key attribute.
