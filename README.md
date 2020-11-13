@@ -35,7 +35,7 @@ When the command `npm start` or `yarn start` is run, the `index.html` file which
 
 In react component represents a part of the user interface. Component's are reusable and can contain other component.
 
-The component file is placed in a js file. We can also use a jsx file structure for the purpose. 
+The component file is placed in a js file. We can also use a jsx file structure for the purpose.
 
 There are two types of component:
 
@@ -48,41 +48,41 @@ Functional components are just js functions, they optionally receive `object` or
 
 We use [Pascal case](https://techterms.com/definition/pascalcase) for component file naming.
 
-When we are exporting a component by using `export default App` we can imoprt that component by using any name. There is another kind of export called *named exports* which looks like:
+When we are exporting a component by using `export default App` we can imoprt that component by using any name. There is another kind of export called _named exports_ which looks like:
 
 ```jsx
-export const Greet = () => <h1>Hello Joy!</h1> 
+export const Greet = () => <h1>Hello Joy!</h1>;
 ```
 
 In this situation we have to import the component with the same name.
 Eg:
 
 ```jsx
-import {Greet} from './component/Greet';
+import { Greet } from "./component/Greet";
 ```
 
 ## Tutorial 6: Class Components
 
 They are basically ES6 classes. They can also receive optional `props` . Apart from that they can also maintain private internal state.
 
-| Functional Component | Class Component |
-|---|---|
-| Simple functions receiving props and returning a declaration| More feature rich |
-| Use them as much as possible | Maintain their own private data|
-| Advantage: Absence of 'this' keyword| Complex UI logic |
-| Solution without using state | Provide lifecycle hooks |
-| Mainly responsible for the UI | |
-| Stateless/Dumb/Presentational | Stateful/ Smart/Container|
+| Functional Component                                         | Class Component                 |
+| ------------------------------------------------------------ | ------------------------------- |
+| Simple functions receiving props and returning a declaration | More feature rich               |
+| Use them as much as possible                                 | Maintain their own private data |
+| Advantage: Absence of 'this' keyword                         | Complex UI logic                |
+| Solution without using state                                 | Provide lifecycle hooks         |
+| Mainly responsible for the UI                                |                                 |
+| Stateless/Dumb/Presentational                                | Stateful/ Smart/Container       |
 
 Class Component boiler-plate
 
 ```jsx
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class ClassName extends Component {
-    render() {
-        return <h1></h1> // render should return null or some html
-    }
+  render() {
+    return <h1></h1>; // render should return null or some html
+  }
 }
 
 export default ClassName;
@@ -119,19 +119,19 @@ Props are immutable
 
 ## Tutorial 10: State
 
-| props | state |
-|---|---|
-| props get passed to the component| state is managed within the component|
-| function parameters | variables declared in the function body|
-| props are immutable| state can be changed |
-| props - Functional Components | useState hook - functional Components |
-| this.props - Class Components | this.state - Class Component|
+| props                             | state                                   |
+| --------------------------------- | --------------------------------------- |
+| props get passed to the component | state is managed within the component   |
+| function parameters               | variables declared in the function body |
+| props are immutable               | state can be changed                    |
+| props - Functional Components     | useState hook - functional Components   |
+| this.props - Class Components     | this.state - Class Component            |
 
 ## Tutorial 11: setState
 
 Watch the [video](https://www.youtube.com/watch?v=uirRaVjRsf4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=11) for usage of setState and its behaviour
 
-If we `console.log` the value of the counter as shown in the video, we will notice that the value in the console in 1 less than the actual value that is rendered. This is because calls to setState is async. Here the `console.log` is called before the state is set. Many a times we want a piece of code execute only when the state is set. To handle such tasks we have the `callback` function which can be passed as a second parameter to the setState function. The setState function has two parameters: the first is the state object and the second parameter is the callback method. The callback function is an arrow function. 
+If we `console.log` the value of the counter as shown in the video, we will notice that the value in the console in 1 less than the actual value that is rendered. This is because calls to setState is async. Here the `console.log` is called before the state is set. Many a times we want a piece of code execute only when the state is set. To handle such tasks we have the `callback` function which can be passed as a second parameter to the setState function. The setState function has two parameters: the first is the state object and the second parameter is the callback method. The callback function is an arrow function.
 
 ### Summary
 
@@ -148,14 +148,16 @@ When you have to update state based on the previous state value, pass in a funct
 Another way is to destructure in the function body.
 
 ```jsx
-const Greet = props => {
-const {name, heroname} = props;
-return (
-	<div>
-		<h1>Hello {name} a.k.a {heroname}</h1>
-	</div>
-	)
-}
+const Greet = (props) => {
+  const { name, heroname } = props;
+  return (
+    <div>
+      <h1>
+        Hello {name} a.k.a {heroname}
+      </h1>
+    </div>
+  );
+};
 ```
 
 In class component we generally tend to destructure the props and state in the render method.
@@ -184,47 +186,48 @@ Binding the event handler in the constructor as opposed to binding in the render
 *<button onClick={this.clickHandler.bind(this)}>Click</button>* 
 ```
 
-*This is the first method of passing event handlers. This is expensive in large applications as it causes new event handlers whenever this is called* 
+_This is the first method of passing event handlers. This is expensive in large applications as it causes new event handlers whenever this is called_
 
 ```jsx
 *button onClick={() => this.clickHandler()}>Click</button>* 
 ```
 
-*this also has performance implications* 
+_this also has performance implications_
 
 ```jsx
 // this part goes inside the constructor
 this.clickHandler = this.clickHandler.bind(this);
 // this part goes inside the render method
-<button onClick={this.clickHandler}>Click</button>
+<button onClick={this.clickHandler}>Click</button>;
 ```
 
-*This is better as the binding happens once*
+_This is better as the binding happens once_
 
 The final approach is to use an arrow function as a class property. We basically have to change the way we define the method in the class.
 
 ```jsx
 // this part goes inside the class as a method
 clickHandler = () => {
-        this.setState ({
-            message: 'GoodBye!'
-        })
-    }
+  this.setState({
+    message: "GoodBye!",
+  });
+};
 // this part goes inside the render method
-<button onClick={this.clickHandler}>Click</button>
+<button onClick={this.clickHandler}>Click</button>;
 ```
+
 ## Tutorial 15: Methods as props
 
 We can pass a method as a prop to a child in the following manner.
 
 ```jsx
-<ChildComponent greetHandler = {this.greetParent}/>
+<ChildComponent greetHandler={this.greetParent} />
 ```
 
 Likewise to pass a parameter from the child component to the parent component, we use and `arrow function` like so
 
 ```jsx
-<button onClick={() => props.greetHandler('child')}>Greet Parent</button>
+<button onClick={() => props.greetHandler("child")}>Greet Parent</button>
 ```
 
 ## Tutorial 16: Conditional Rendering
@@ -240,14 +243,9 @@ If/Else
 
 ```jsx
 if (this.state.isLoggedIn) {
-    return (
-        <div>Welcome Joy</div>
-    )
-}
-else {
-    return (
-        <div>Welcome Guest</div>
-    )
+  return <div>Welcome Joy</div>;
+} else {
+  return <div>Welcome Guest</div>;
 }
 ```
 
@@ -256,31 +254,24 @@ Element Variables
 ```jsx
 let message;
 if (this.state.isLoggedIn) {
-    message = <div>Welcome Joy</div>
-}
-else {
-    message = <div>Bonjour Guest</div>
+  message = <div>Welcome Joy</div>;
+} else {
+  message = <div>Bonjour Guest</div>;
 }
 
-return (<div>{message}</div>)
+return <div>{message}</div>;
 ```
 
 Ternary conditional operators
 
 ```jsx
-return (
-    this.state.isLoggedIn ?
-    <div>Welcome Joy</div> :
-    <div>Hello Guest</div>
-)
+return this.state.isLoggedIn ? <div>Welcome Joy</div> : <div>Hello Guest</div>;
 ```
 
 Short circuit operators
 
 ```jsx
-return (
-    this.state.isLoggedIn && <div>Welcome Joy</div>
-)
+return this.state.isLoggedIn && <div>Welcome Joy</div>;
 ```
 
 Here if `this.state.isLoggedIn` returns true then only the second expression on the right side of the `&&` is evaluated else it is not evaluated.
@@ -320,17 +311,17 @@ A lot of times developers use the index of an element as a `key`. This might res
 ### Styling React Components
 
 1. CSS stylesheets
-2. Inline styling 
+2. Inline styling
 3. CSS modules
 4. CSS in JS Libraries {Styled Components}
 
 We use template literals to pass multiple classes. There are ways to conditionally pass css classes.
 
-In React, inline styles are not specified as a string. Instead they are specified as an object, who's key  is a camelCased version of the styling and its value is the is usually a string.
+In React, inline styles are not specified as a string. Instead they are specified as an object, who's key is a camelCased version of the styling and its value is the is usually a string.
 
 CSS modules feature is available with `react-scripts` version 2 or higher. There is a file naming convention to be used for `create-react-app` . The file name must be suffixed with `.module.css`
 
-One advantage of using css modules is that the classes are locally scoped.  Inline styling works in child components even without an import, this can sometimes cause conflicts.
+One advantage of using css modules is that the classes are locally scoped. Inline styling works in child components even without an import, this can sometimes cause conflicts.
 
 ## Tutorial 21: Basics of Form Handling
 
@@ -344,13 +335,13 @@ Lifecycle methods available for a class components. These methods are not availa
 
 ### Lifecycle methods (Version 16+)
 
-Mounting : they are called when an instance of a component is being created and inserted into a DOM. During the mounting phase we have four methods: *constructor, static getDerivedStateFromProps, render* and *componentDidMount* 
+Mounting : they are called when an instance of a component is being created and inserted into a DOM. During the mounting phase we have four methods: _constructor, static getDerivedStateFromProps, render_ and _componentDidMount_
 
-Updating:  they are called when a component is being re-rendered as a result of changes to either its props or state. During the updating phase we have five methods *static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate* and *componentDidUpdate*
+Updating: they are called when a component is being re-rendered as a result of changes to either its props or state. During the updating phase we have five methods _static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate_ and _componentDidUpdate_
 
 Unmounting : they are called when a component is being removed from the DOM. Here we have one method: componentWillUnmount
 
-Error Handling : they are called  when there is an error during rendering in a lifecycle method or in the constructor of any child component. Here we have two methods: *static getDerivedStateFromError* and *componentDidCatch*
+Error Handling : they are called when there is an error during rendering in a lifecycle method or in the constructor of any child component. Here we have two methods: _static getDerivedStateFromError_ and _componentDidCatch_
 
 Getting a proper understanding of Lifecycle methods and when to use which method is crucial to properly understanding how to work with React.
 
@@ -358,37 +349,37 @@ Getting a proper understanding of Lifecycle methods and when to use which method
 
 These methods are called when an instance of a component is being created and being inserted into a DOM. We are going through them in the order that they are invoked.
 
-First we have the `constructor(props)` . It is a special function that will get called whenever a new component gets created. The constructor is used to *initialize the state and/or also for binding the event handlers to the class events.* We should keep in mind not to cause side effects. Eg: Never make HTTP requests from within a constructor.
+First we have the `constructor(props)` . It is a special function that will get called whenever a new component gets created. The constructor is used to _initialize the state and/or also for binding the event handlers to the class events._ We should keep in mind not to cause side effects. Eg: Never make HTTP requests from within a constructor.
 
 There are two important things to keep in mind when defining a **constructor.** We have to call a special function called `super(props)`. In a class we can only have the access to `props` after passing it through `super` as an argument. The next thing to keep in mind is that the constructor is the only place where we are allowed to set or change the `state` by directly overwriting `this.state` fields. In other places we have to use the `this.setState` method.
 
-The second method that we call is a static method *getDerivedStateFromProps(props, state).* This method gets `props` and `state` as parameters and return either the new state or null. The React documentation classifies this method as a rarely used lifecycle method. **This method is basically used when the state of the component depends on changes in props over time. Eg: Suppose we have a component whose initial state depends on the props that is passed to the component. In such a scenario we can use this method to set the state. Since this method is a static method, *it does not have access to the this keyword.* We cannot call `this.setState` within this particular method. Instead we simply have to return an object that represents the new state of the component. Again we shouldn't cause side effects.
+The second method that we call is a static method _getDerivedStateFromProps(props, state)._ This method gets `props` and `state` as parameters and return either the new state or null. The React documentation classifies this method as a rarely used lifecycle method. \**This method is basically used when the state of the component depends on changes in props over time. Eg: Suppose we have a component whose initial state depends on the props that is passed to the component. In such a scenario we can use this method to set the state. Since this method is a static method, *it does not have access to the this keyword.\* We cannot call `this.setState` within this particular method. Instead we simply have to return an object that represents the new state of the component. Again we shouldn't cause side effects.
 
-The third method is the *render()* method. It is the only required method in a class component.  In the render method we simply read `this.props` and `this.state` and return the JSX which describes the UI. The render function is a pure function. For a given props or state, it always renders the same UI. What we shouldn't do in this method is changing the state or interact with DOM or make ajax calls. Since the render() method JSX also contains the other children components, the children component lifecycle methods are also executed right after the parent render method.
+The third method is the _render()_ method. It is the only required method in a class component. In the render method we simply read `this.props` and `this.state` and return the JSX which describes the UI. The render function is a pure function. For a given props or state, it always renders the same UI. What we shouldn't do in this method is changing the state or interact with DOM or make ajax calls. Since the render() method JSX also contains the other children components, the children component lifecycle methods are also executed right after the parent render method.
 
-The final method of the mounting phase is the *componentDidMount().* This method  will only be called once in the whole lifecycle of the given component and it is invoked immediately after a component and all its children components have been rendered to the DOM. This method is the perfect place to cause side effects. It is here we can interact with the DOM or perform any ajax calls or load data. So *componentDidMount* is a good place to perform initialization that requires DOM nodes also load data by making network requests.
+The final method of the mounting phase is the _componentDidMount()._ This method will only be called once in the whole lifecycle of the given component and it is invoked immediately after a component and all its children components have been rendered to the DOM. This method is the perfect place to cause side effects. It is here we can interact with the DOM or perform any ajax calls or load data. So _componentDidMount_ is a good place to perform initialization that requires DOM nodes also load data by making network requests.
 
 ## Tutorial 24: Component Updating Lifecycle Methods
 
-Updating Lifecycle Methods are those that are called because of changes to the props or the state. We will be going through them in the order in which they are invoked. There are five of them out of which three are rarely used. 
+Updating Lifecycle Methods are those that are called because of changes to the props or the state. We will be going through them in the order in which they are invoked. There are five of them out of which three are rarely used.
 
-The first method is *getDerivedStateFromProps(props, state).* This is a static method which receives props and state as its parameter and has to return null or an object that has the current state of the component. This method is called every time a component is re-rendered. This method is used when the state depends on the props of the component.
+The first method is _getDerivedStateFromProps(props, state)._ This is a static method which receives props and state as its parameter and has to return null or an object that has the current state of the component. This method is called every time a component is re-rendered. This method is used when the state depends on the props of the component.
 
-The second method is the *shouldComponentUpdate(nextProps, nextState).* This method receives the updated props and state and the purpose of this method is clear from its name. It dictates whether the component should update or not. By default all class components re-renders whenever the props they receive or their state changes. *This method can prevent that default behaviour by returning false.* What we can do is check the previous state values with the current state values and return true or false accordingly to let React know whether the component should update or not. This method is basically used for performance optimization. We should avoid causing any side effects or calling the setState method. This is a rarely used method.
+The second method is the _shouldComponentUpdate(nextProps, nextState)._ This method receives the updated props and state and the purpose of this method is clear from its name. It dictates whether the component should update or not. By default all class components re-renders whenever the props they receive or their state changes. _This method can prevent that default behaviour by returning false._ What we can do is check the previous state values with the current state values and return true or false accordingly to let React know whether the component should update or not. This method is basically used for performance optimization. We should avoid causing any side effects or calling the setState method. This is a rarely used method.
 
-The third method is the *render()* method.
+The third method is the _render()_ method.
 
-The fourth method is *getSnapshotBeforeUpdate(prevProp, prevState )* this method is called right before the changes from the virtual DOM is to be reflected in the DOM. This again is a rarely used method. We can use this method to capture some information from the DOM. This method will either return null or return a value. Returned value will be passed as the third parameter to the next method. 
+The fourth method is _getSnapshotBeforeUpdate(prevProp, prevState )_ this method is called right before the changes from the virtual DOM is to be reflected in the DOM. This again is a rarely used method. We can use this method to capture some information from the DOM. This method will either return null or return a value. Returned value will be passed as the third parameter to the next method.
 
-The final method in  the update lifecycle is the *componentDidUpdate(prevProps, PrevState, snapshot)* this method is called after the render is finished in the re-render cycles. We can cause side effects. That is we can make ajax calls. But before making the call we need to compare the previous props with the new props and then decide whether to make the ajax call or not. If we do not compare we are basically making unwanted requests which is not a good idea. 
+The final method in the update lifecycle is the _componentDidUpdate(prevProps, PrevState, snapshot)_ this method is called after the render is finished in the re-render cycles. We can cause side effects. That is we can make ajax calls. But before making the call we need to compare the previous props with the new props and then decide whether to make the ajax call or not. If we do not compare we are basically making unwanted requests which is not a good idea.
 
 ### Unmounting Phase Method
 
-It has just one method *componentWillUnmount()*. This method is invoked immediately before a component is unmounted and destroyed. In this method we can perform some clean up tasks like cancelling any network requests, removing event handlers, cancelling any subscriptions and also invalidating timers. We shouldn't call the setState method because once the unmounting is done, a component is never re-rendered. 
+It has just one method _componentWillUnmount()_. This method is invoked immediately before a component is unmounted and destroyed. In this method we can perform some clean up tasks like cancelling any network requests, removing event handlers, cancelling any subscriptions and also invalidating timers. We shouldn't call the setState method because once the unmounting is done, a component is never re-rendered.
 
 ### Error Handling Phase Methods
 
-There are two methods *static getDerivedStateFromError(error) and componentDidCatch(error, info).* These methods are called when there is an error either during rendering, in a lifecycle method, or the constructor of any child component
+There are two methods _static getDerivedStateFromError(error) and componentDidCatch(error, info)._ These methods are called when there is an error either during rendering, in a lifecycle method, or the constructor of any child component
 
 ## Tutorial 25: Fragments
 
@@ -398,15 +389,15 @@ Fragments lets us group a list of children elements without creating extra nodes
 
 Another way of creating components.
 
-| Regular Component | Pure Component|
-|---|---|
-|A regular component does not implement the *shouldComponentUpdate* method. It always returns true by default.|A pure component on the other hand implements *shouldComponentUpdate* with a shallow props and state comparison. 
+| Regular Component                                                                                             | Pure Component                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| A regular component does not implement the _shouldComponentUpdate_ method. It always returns true by default. | A pure component on the other hand implements _shouldComponentUpdate_ with a shallow props and state comparison. |
 
 ### Shallow Comparison (SC)
 
 #### Primitive Types
 
-For two primitive types a and b for numbers, strings and booleans a (SC) b returns true is a and b have the same value and are of the same type. 
+For two primitive types a and b for numbers, strings and booleans a (SC) b returns true is a and b have the same value and are of the same type.
 Eg: string 'Joy' (SC) string 'Joy' returns true
 
 #### Complex Types
@@ -424,3 +415,7 @@ To answer the question why we should use PureComponents. PureComponents by preve
 ## Tutorial 27 - Memo
 
 PureComponents : Class based components :: React.memo : functional components. React.memo accepts a component adds some things to the component and returns a new enhanced component. React.memo is a higher order component.
+
+## Tutorial 28: Refs
+
+Refs make is possible to access DOM nodes directly within react. Watch [video](https://www.youtube.com/watch?v=FXa9mMTKOu8&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=28) if necessary.
