@@ -419,3 +419,7 @@ PureComponents : Class based components :: React.memo : functional components. R
 ## Tutorial 28: Refs
 
 Refs make is possible to access DOM nodes directly within react. Watch [video](https://www.youtube.com/watch?v=FXa9mMTKOu8&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=28) if necessary.
+
+## Tutorial 29: Refs with Class Components
+
+In special circumstances if at all there is a need a ref to a child component from a parent component, it is definitely possible. The component however has to be a class component. Refs cannot be attached to functional components
