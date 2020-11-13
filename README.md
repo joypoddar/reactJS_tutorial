@@ -429,3 +429,11 @@ In special circumstances if at all there is a need a ref to a child component fr
 Ref forwarding is a technique of automatically passing a ref through a component to one of its children.
 
 Ref forwarding can be achieved using the forwardRef method from the React library. We use arrow function to achieve the forwarding. Next we assign React.forwardRef method to our arrow function variable and pass the arrow function as a parameter. The forwardRef() method takes two parameters `props and ref`
+
+## Tutorial 31: Portals
+
+React portals provide a way to render children to a DOM node that exist outside the DOM hierarchy of the parent component.
+
+Use cases: When two components use different styling.
+
+Event bubbling: Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. An event fired from inside a portal will propagate to every ancestors in the DOM tree.
