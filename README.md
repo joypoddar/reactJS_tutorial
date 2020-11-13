@@ -423,3 +423,9 @@ Refs make is possible to access DOM nodes directly within react. Watch [video](h
 ## Tutorial 29: Refs with Class Components
 
 In special circumstances if at all there is a need a ref to a child component from a parent component, it is definitely possible. The component however has to be a class component. Refs cannot be attached to functional components
+
+## Tutorial 30: Forwarding Refs
+
+Ref forwarding is a technique of automatically passing a ref through a component to one of its children.
+
+Ref forwarding can be achieved using the forwardRef method from the React library. We use arrow function to achieve the forwarding. Next we assign React.forwardRef method to our arrow function variable and pass the arrow function as a parameter. The forwardRef() method takes two parameters `props and ref`
