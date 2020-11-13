@@ -419,4 +419,8 @@ A pure component implements shouldComponentUpdate with a shallow prop and state 
 
 It does a SC of prevState, prevProps with currentState and currentProps and only when there is a difference then it re-renders.
 
-To answer the question why we should use PureComponents. PureComponents by preventing unnecessary renders gives performance boost in certain scenarios. One thing to keep in mind is that we should not mutate objects or arrays in props or state. Always return a new object or array while working with pure component
+To answer the question why we should use PureComponents. PureComponents by preventing unnecessary renders gives performance boost in certain scenarios. One thing to keep in mind is that we should not mutate objects or arrays in props or state. Always return a new object or array while working with pure component. Pure components only work with class components.
+
+## Tutorial 27 - Memo
+
+PureComponents : Class based components :: React.memo : functional components. React.memo accepts a component adds some things to the component and returns a new enhanced component. React.memo is a higher order component.
