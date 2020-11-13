@@ -437,3 +437,23 @@ React portals provide a way to render children to a DOM node that exist outside 
 Use cases: When two components use different styling.
 
 Event bubbling: Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. An event fired from inside a portal will propagate to every ancestors in the DOM tree.
+
+## Tutorial 32: Error Boundary
+
+A class component that implements either one or both the lifecycle methods getDerivedStateFromError or componentDidCatch becomes an error boundary.
+
+The static method _getDerivedStateFromError_ method is used to render a fallback UI after an error is thrown and the _componentDidCatch_ method is used to log the error information.
+
+In development the error are visible even after applying error boundary.
+
+Error boundaries catch errors during rendering, during lifecycle methods and in the constructors of the whole tree below them. However they do not catch errors inside `event handlers`
+
+### Summary
+
+Error boundaries are React Components that catch JS error n their child component tree. log those errors and display a fall-back UI.
+
+A class component becomes an Error Boundary by defining either or both of _getDerivedStateFromError_ and _componentDidCatch lifecycle methods._
+
+The placement of the Error Boundary also matters as it controls if the entire app should have the fall-back UI or just the component causing the problem.
+
+Provide a way to gracefully handle error in application code.
