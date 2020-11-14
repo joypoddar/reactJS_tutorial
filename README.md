@@ -494,3 +494,7 @@ Passing down a parameter to the WrappedComponent
 Like HOC Render Prop pattern is another way to share code between components. In React it is possible to use a prop whose value is a function to control what is actually rendered by a component. This is what the Render prop pattern is based on.
 
 The term render prop refers to a technique for sharing code between React component using a prop whose value is a function.
+
+## Tutorial 38: Context (Part 1)
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
