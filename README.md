@@ -461,3 +461,30 @@ Provide a way to gracefully handle error in application code.
 ## Tutorial 33: Higher Order Components (Part 1)
 
 Need for a higher order component. In a situation where there is reuse of code we lift that part of the code to the parent component and pass it as props.
+
+## Tutorial 34: Higher Order Components (Part 2)
+
+Need - to share common functionality between components.
+
+An HOC is a pattern where a function takes a component as an argument and returns a new component.
+
+Eg:
+
+```jsx
+const NewComponent = higherOrderComponent(originalComponent);
+```
+
+Typically an HOC adds additional data or functionality to the original component. So the new component can also be referred to as enhanced component.
+
+Eg :
+
+```jsx
+const enhancedComponent = higherOrderComponent(originalComponent);
+const IronMan = withSuit(TonyStart);
+```
+
+## Tutorial 35: Higher Order Components - HOC (Part 3)
+
+Pass down all the props.
+
+Passing down a parameter to the WrappedComponent
