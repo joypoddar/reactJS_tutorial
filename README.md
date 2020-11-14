@@ -457,3 +457,7 @@ A class component becomes an Error Boundary by defining either or both of _getDe
 The placement of the Error Boundary also matters as it controls if the entire app should have the fall-back UI or just the component causing the problem.
 
 Provide a way to gracefully handle error in application code.
+
+## Tutorial 33: Higher Order Components (Part 1)
+
+Need for a higher order component. In a situation where there is reuse of code we lift that part of the code to the parent component and pass it as props.
