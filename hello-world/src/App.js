@@ -1,24 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
-import CounterProp from "./component/CounterProp";
-import HoverCounterTwo from "./component/HoverCounterTwo";
-import ClickCounter2 from "./component/ClickCounter2";
+import ComponentC from "./component/ComponentC";
+import { UserProvider } from "./component/userContext";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CounterProp>
-          {(count, incrementCount) => (
-            <ClickCounter2 count={count} incrementCount={incrementCount} />
-          )}
-        </CounterProp>
-
-        <CounterProp>
-          {(count, incrementCount) => (
-            <HoverCounterTwo count={count} incrementCount={incrementCount} />
-          )}
-        </CounterProp>
+        <UserProvider value="John">
+          <ComponentC />
+        </UserProvider>
       </div>
     );
   }

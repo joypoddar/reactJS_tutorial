@@ -498,3 +498,11 @@ The term render prop refers to a technique for sharing code between React compon
 ## Tutorial 38: Context (Part 1)
 
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+## Tutorial 39: Context (Part 2)
+
+There are 3 steps to implement in making use of context.
+
+1. Create the context
+2. Provide the context value
+3. Consume the context value
