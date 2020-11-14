@@ -506,3 +506,15 @@ There are 3 steps to implement in making use of context.
 1. Create the context
 2. Provide the context value
 3. Consume the context value
+
+## Tutorial 40: Context (Part 3)
+
+We can set a default value to the context. The default value is set while creating the context. It is passed as an argument to the `createContext` method.
+
+Context Type
+
+### Limitations:
+
+Works only with class components
+
+We can subscribe only to a singe context using context type.
